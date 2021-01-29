@@ -153,13 +153,16 @@ body{
         margin-right:0;
     }
     .job .col{
-        font-size: 14px;
+        font-size: 10px;
     }
     #second-wrapper{
         font-size:20pt;
     }
     #rays{
         display:table;
+    }
+    #lower-menu{
+        padding:0;
     }
 }
 @media only screen and (max-width: 330px) {
