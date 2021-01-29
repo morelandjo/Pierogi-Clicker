@@ -44,26 +44,29 @@
             </div>
             <div class="row" id="jobs">
                 <div class="col" id="lower-menu">
-                    <div class="row job" id="dough-maker" job="dough">
-                        <div class="col-2"><img src="images/baker-icon.png"/></div>
-                        <div class="col">
-                            Dough Maker
+                        <div class="row job" id="dough-maker" job="dough">
+                            <div class="hidden-job" job="dough"></div>
+                            <div class="col-2"><img class="job-image" src="images/unknown.png"/></div>
+                            <div class="col">
+                                <span class="job-title">??????????</span>
+                            </div>
+                            <div class="col-4"><span id="dough-cost"></span><img class="pierogi-icon" src="images/pierogi.png" /></div>
+                            <div class="col-3"><span id="dough-level"></span></div>
                         </div>
-                        <div class="col-4"><span id="dough-cost"></span><img class="pierogi-icon" src="images/pierogi.png" /></div>
-                        <div class="col-3"><span id="dough-level"></span></div>
-                    </div>
                     <div class="row job" id="pierogi-presser" job="presser">
-                        <div class="col-2"><img src="images/former-icon.png"/></div>
+                        <div class="hidden-job" job="dough"></div>
+                        <div class="col-2"><img class="job_image" src="images/unknown.png"/></div>
                         <div class="col">
-                            Pierogi Presser
+                            <span class="job-title">??????????</span>
                         </div>
                         <div class="col-4"><span id="presser-cost"></span><img class="pierogi-icon" src="images/pierogi.png" /></div>
                         <div class="col-3"><span id="presser-level"></span></div>
                     </div>
                     <div class="row job" id="pierogi-boiler" job="boiler">
-                        <div class="col-2"><img src="images/boiler-icon.png"/></div>
+                        <div class="hidden-job" job="dough"></div>
+                        <div class="col-2"><img class="job_image" src="images/unknown.png"/></div>
                         <div class="col">
-                            Pierogi Boiler
+                            <span class="job-title">??????????</span>
                         </div>
                         <div class="col-4"><span id="boiler-cost"></span><img class="pierogi-icon" src="images/pierogi.png" /></div>
                         <div class="col-3"><span id="boiler-level"></span></div>

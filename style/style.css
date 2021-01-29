@@ -66,6 +66,15 @@ body{
     border: 3px solid black;
     cursor:pointer;
     border-radius: 5px;
+    position:relative;
+}
+.hidden-job{
+    width: 100%;
+    background-color: black;
+    z-index: 2;
+    height: 100%;
+    position: absolute;
+    opacity: 0.5;
 }
 
 .job:hover{

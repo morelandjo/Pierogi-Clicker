@@ -7,6 +7,18 @@ dough_multiplier = 1;
 presser_multiplier = 5;
 boiler_multiplier = 20;
 
+dough_image="images/baker-icon.png";
+presser_image="images/former-icon.png";
+boiler_image="images/boiler-icon.png";
+
+dough_title="Dough Maker";
+presser_title="Pierogi Presser";
+boiler_title="Pierogi Boiler";
+
+dough_visible=0;
+presser_visible=0;
+boiler_visible=0;
+
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -108,18 +120,30 @@ $( ".job" ).on( "click", function() {
 function color_functions(){
     if(str_to_num_math($("#counter").text()) >= str_to_num_math($("#dough-cost").text())){
         $("#dough-cost").css('color', 'green');
+        dough_visible=1;
+        $("#dough-maker .job-image").attr("src",dough_image);
+        $("#dough-maker .job-title").text(dough_title);
+        $("#dough-maker .hidden-job").hide();
     }else{
         $("#dough-cost").css('color', 'red');
     }
     
     if(str_to_num_math($("#counter").text()) >= str_to_num_math($("#presser-cost").text())){
         $("#presser-cost").css('color', 'green');
+        presser_visible=1;
+        $("#pierogi-presser .job-image").attr("src",presser_image);
+        $("#pierogi-presser .job-title").text(presser_title);
+        $("#pierogi-presser .hidden-job").hide();
     }else{
         $("#presser-cost").css('color', 'red');
     }
     
     if(str_to_num_math($("#counter").text()) >= str_to_num_math($("#boiler-cost").text())){
         $("#boiler-cost").css('color', 'green');
+        boiler_visible=1;
+        $("#pierogi-boiler .job-image").attr("src",boiler_image);
+        $("#pierogi-boiler .job-title").text(boiler_title);
+        $("#pierogi-boiler .hidden-job").hide();
     }else{
         $("#boiler-cost").css('color', 'red');
     }
