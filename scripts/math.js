@@ -1,4 +1,4 @@
-pierogi = 1000;
+pierogi = 0;
 pierogi_second = 0;
 dough_level = 0;
 presser_level = 0
