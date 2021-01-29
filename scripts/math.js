@@ -1,4 +1,4 @@
-pierogi = 0;
+pierogi = 1000;
 pierogi_second = 0;
 dough_level = 0;
 presser_level = 0
@@ -59,7 +59,7 @@ function calc_cost(level,job){
     }
     
     var cost = base+(base*level*multi);
-    var cost = numberWithCommas(cost);
+    var cost = cost;
     return cost;
 }
 
@@ -77,9 +77,9 @@ function add_level(job){
         level_update(job, boiler_level);
         var new_cost = calc_cost(boiler_level,job);
     }
-    $("#dough-cost").text(calc_cost(dough_level,"dough"));
-    $("#presser-cost").text(calc_cost(presser_level,"presser"));
-    $("#boiler-cost").text(calc_cost(boiler_level,"boiler"));
+    $("#dough-cost").text(numberWithCommas(calc_cost(dough_level,"dough")));
+    $("#presser-cost").text(numberWithCommas(calc_cost(presser_level,"presser")));
+    $("#boiler-cost").text(numberWithCommas(calc_cost(boiler_level,"boiler")));
     
 }
 
@@ -96,6 +96,7 @@ $( ".job" ).on( "click", function() {
     }
     //get cost
     var cost = calc_cost(level,job);
+    console.log(cost);
     if (pierogi >= cost){
         pierogi = pierogi-cost;
         display(pierogi);
@@ -124,9 +125,9 @@ function color_functions(){
     }
 }
 
-$("#dough-cost").text(calc_cost(dough_level,"dough"));
-$("#presser-cost").text(calc_cost(presser_level,"presser"));
-$("#boiler-cost").text(calc_cost(boiler_level,"boiler"));
+$("#dough-cost").text(numberWithCommas(calc_cost(dough_level,"dough")));
+$("#presser-cost").text(numberWithCommas(calc_cost(presser_level,"presser")));
+$("#boiler-cost").text(numberWithCommas(calc_cost(boiler_level,"boiler")));
 
 $("#dough-level").text(dough_level);
 $("#presser-level").text(presser_level);
