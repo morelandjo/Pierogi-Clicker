@@ -1,0 +1,155 @@
+body{
+    font-family: 'Yusei Magic', sans-serif;
+}
+#pierogi {
+    display:flex;
+    margin: auto;
+  position: absolute;
+}
+
+#pierogi img{
+    margin: 0 auto;
+    width:250px;
+    cursor:pointer;
+}
+#menu{
+    background-color:#a5a5a5;
+}
+
+#rays{
+    background: url(../images/rays.png) 0 0 no-repeat; 
+	width: 490px; 
+	height: 490px;
+    margin:auto;
+    background-position:center;
+    z-index:-1;
+}
+#ray-wrapper{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#main-area{
+    justify-content: center;
+    align-items: center;
+    
+}
+#counter-area{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#counter-wrapper{
+    text-align: center;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 26pt;
+}
+#second-wrapper{
+    text-align: center;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 26pt;
+}
+#jobs{
+    margin-left:20%;
+    margin-right:20%;
+}
+.rogie-splosion{
+    position:absolute;
+     z-index:-1;
+}
+.job {
+    height: 80px;
+    margin: 20px;
+    border: 3px solid black;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+.job:hover{
+    -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.93); 
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.93);
+}
+.job:active{
+    -webkit-box-shadow: 0px 0px 30px -2px rgba(0,0,0,0.93); 
+    box-shadow: 0px 0px 30px -2px rgba(0,0,0,0.93);
+}
+
+.job .col{
+    
+    border-right: 3px solid black;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #919191;
+}
+.pierogi-icon{
+    height:17px;
+    margin-top: -5px;
+    margin-left: 2px;
+}
+.job .col-4{
+    display: flex;
+    align-items: center;
+    background-color: #d5d5d5;
+}
+.job .col-3{
+    text-align: right;
+    background-color: #d5d5d5;
+    display: flex;
+    align-items: center;
+}
+.job .col-3 span{
+    margin-right:20px;
+    font-size:48px;
+    margin-left:auto;
+}
+.job .col-2{
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 9%, rgba(145,145,145,1) 100%);
+    display: flex;
+    align-items: center;
+}
+.container-fluid{
+    max-width:1200px;
+}
+.job .col-2 img{
+    width: 100%;
+    max-width: 77px;
+}
+/* Medium devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 768px) {
+    #jobs{
+        margin-left:10%;
+        margin-right:10%;
+    }
+}
+/* Small devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 576px) {
+    #jobs{
+        margin-left:0%;
+        margin-right:0%;
+    }
+    .job .col-3 span{
+        font-size:20px;
+    }
+    .job{
+        margin-left:0;
+        margin-right:0;
+    }
+    .job .col{
+        font-size: 14px;
+    }
+    #second-wrapper{
+        font-size:20pt;
+    }
+    #rays{
+        display:table;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .job .col{
+        font-size: 10px;
+    }
+}

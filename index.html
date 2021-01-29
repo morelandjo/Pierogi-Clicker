@@ -7,6 +7,11 @@
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="style/style.css">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+       
 
         <title>Pierogi Clicker</title>
     </head>
@@ -16,21 +21,62 @@
             <!-- top nav menu -->
             <div class="row">
                 <div class="col"><!-- spacer--></div>
-                <div class="col-6">
+                <!--<div class="col-6" id="menu">
                     Menu will go here
+                </div>-->
+                <div class="col"><!-- spacer--></div>
+            </div>
+            <div class="row" id="main-area">
+                <div class="col">
+                    <div id="ray-wrapper">
+                        <div id="pierogi"><img id="pierogi_img" src="images/pierogi.png"/></div>
+                        <div id="rays"></div>
+                        <div class="rogie-splosion" ></div>
+                    </div>
+                    
                 </div>
-                <div class="col"><!-- spacer--></div>
             </div>
-            <div class="row">
-                <div class="col"><!-- spacer--></div>
-                <div class="col-5">
-                    Pierogi goes here
+            <div class="row" id="counter-area">
+                <div class="col">
+                    <div id="counter-wrapper"><span id="counter">0</span> pierogi</div>
+                    <div id="second-wrapper"><span id="second">0</span> pierogi per second</div>
                 </div>
-                <div class="col"><!-- spacer--></div>
             </div>
-            <div class="row">
-            Lower menus, build, etc
+            <div class="row" id="jobs">
+                <div class="col" id="lower-menu">
+                    <div class="row job" id="dough-maker" job="dough">
+                        <div class="col-2"><img src="images/baker-icon.png"/></div>
+                        <div class="col">
+                            Dough Maker
+                        </div>
+                        <div class="col-4"><span id="dough-cost"></span><img class="pierogi-icon" src="images/pierogi.png" /></div>
+                        <div class="col-3"><span id="dough-level"></span></div>
+                    </div>
+                    <div class="row job" id="pierogi-presser" job="presser">
+                        <div class="col-2"><img src="images/former-icon.png"/></div>
+                        <div class="col">
+                            Pierogi Presser
+                        </div>
+                        <div class="col-4"><span id="presser-cost"></span><img class="pierogi-icon" src="images/pierogi.png" /></div>
+                        <div class="col-3"><span id="presser-level"></span></div>
+                    </div>
+                    <div class="row job" id="pierogi-boiler" job="boiler">
+                        <div class="col-2"><img src="images/boiler-icon.png"/></div>
+                        <div class="col">
+                            Pierogi Boiler
+                        </div>
+                        <div class="col-4"><span id="boiler-cost"></span><img class="pierogi-icon" src="images/pierogi.png" /></div>
+                        <div class="col-3"><span id="boiler-level"></span></div>
+                    </div>
+                </div>
             </div>
+        
         </div>
+        <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js'></script>
+        <script src="scripts/animation.js"></script>
+        <script src="scripts/math.js"></script>
+      
     </body>
 </html>
