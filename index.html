@@ -43,8 +43,26 @@
                     <div id="second-wrapper"><span id="second">0</span> pierogi per second</div>
                 </div>
             </div>
+            <div class="row" id="buttons">
+                <div class="col home-contain">
+                    <img id="home-btn" class="home-inactive" src="images/button_placeholder.png" />
+                </div>
+                <div class="col jobs-contain">
+                    <img id="jobs-btn" src="images/button_placeholder.png" />
+                </div>
+                <div class="col unknown-contain">
+                    <img id="unknown-btn" src="images/button_placeholder.png" />
+                </div>
+            </div>
+            <div class="row" id="home">
+                <div class="col lower-menu" id="home-menu">
+                    <div class="row world" id="dough-maker-world" job="dough"></div>
+                    <div class="row world" id="pierogi-presser-world" job="presser"></div>
+                    <div class="row world" id="pierogi-boiler-world" job="boiler"></div>
+                </div>
+            </div>
             <div class="row" id="jobs">
-                <div class="col" id="lower-menu">
+                <div class="col lower-menu" id="jobs-menu">
                         <div class="row job" id="dough-maker" job="dough">
                             <div class="hidden-job" job="dough"></div>
                             <div class="col-2"><img class="job-image" src="images/unknown.png"/></div>
@@ -56,7 +74,7 @@
                         </div>
                     <div class="row job" id="pierogi-presser" job="presser">
                         <div class="hidden-job" job="dough"></div>
-                        <div class="col-2"><img class="job_image" src="images/unknown.png"/></div>
+                        <div class="col-2"><img class="job-image" src="images/unknown.png"/></div>
                         <div class="col">
                             <span class="job-title">??????????</span>
                         </div>
@@ -65,7 +83,7 @@
                     </div>
                     <div class="row job" id="pierogi-boiler" job="boiler">
                         <div class="hidden-job" job="dough"></div>
-                        <div class="col-2"><img class="job_image" src="images/unknown.png"/></div>
+                        <div class="col-2"><img class="job-image" src="images/unknown.png"/></div>
                         <div class="col">
                             <span class="job-title">??????????</span>
                         </div>
@@ -74,8 +92,10 @@
                     </div>
                 </div>
             </div>
-        
+            
+               
         </div>
+         <p class="version">Version 1.1</p>
         <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js'></script>

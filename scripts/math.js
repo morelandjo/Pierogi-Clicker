@@ -66,6 +66,65 @@ function second_display(){
 
 function level_update(job, level){
     $( "#"+job+"-level" ).text(level);
+    job_animations(job,level);
+}
+
+//refactor
+function job_animations(job,level){
+    if(job == 0){
+        var dough_level = get_value_from_object(player_arr,"dough_level");
+        var presser_level = get_value_from_object(player_arr,"presser_level");
+        var boiler_level = get_value_from_object(player_arr,"boiler_level");
+        var num_anim_dough = Math.ceil(dough_level/100);
+        if(num_anim_dough > 5){
+            num_anim_dough = 5;
+        }
+        var i = 0;
+        while (i<num_anim_dough){
+            $( ".world[job='dough']" ).append("<div class='col'><img class='rolling-pin-gif' src='images/rolling_pin.gif' /></div>");
+            i++;
+        }
+        
+        var num_anim_presser = Math.ceil(presser_level/100);
+        if(num_anim_presser > 5){
+            num_anim_dough = 5;
+        }
+        var i = 0;
+        while (i<num_anim_presser){
+            $( ".world[job='presser']" ).append("<div class='col'><img class='presser-gif' src='images/former.gif' /></div>");
+            i++;
+        }
+        
+        var num_anim_boiler = Math.ceil(boiler_level/100);
+        if(num_anim_boiler > 5){
+            num_anim_dough = 5;
+        }
+        var i = 0;
+        while (i<num_anim_boiler){
+            $( ".world[job='boiler']" ).append("<div class='col'><img class='boiling-gif' src='images/boiling_pot.gif' /></div>");
+            i++;
+        }
+    }else{
+        //redraw the animations
+        var num_anim = Math.ceil(level/100);
+        if(num_anim > 5){num_anim = 5;}
+        var i = 0;
+        $( ".world[job='"+job+"']" ).html("");
+        while (i<num_anim){
+            if(job == "dough"){
+                var clas = "rolling-pin-gif";
+                var src = "images/rolling_pin.gif";
+            }else if (job == "presser"){
+                var clas = "presser-gif";
+                var src = "images/former.gif";
+            }else if (job == "boiler"){
+                var clas = "boiling-gif";
+                var src = "images/boiling_pot.gif";
+            }
+            $( ".world[job='"+job+"']" ).append("<div class='col'><img class='"+clas+"' src='"+src+"' /></div>");
+            i++;
+        }
+    }
 }
 
 
@@ -77,8 +136,6 @@ $( "#pierogi" ).on( "click", function() {
     display();
     $('.rogie-splosion').prepend('<img class="theExp" src="images/explode.gif'+'?a='+Math.random()+'" />'); 
 });
-
-
 
 function calc_cost(level,job){
     var the_value = get_value_from_object(jobs_arr,job);
@@ -134,6 +191,7 @@ function color_functions(){
         //presser_visible=1;
         set_value_from_object(player_arr,"presser_visibility",1,0);
         var presser = get_value_from_object(jobs_arr,"presser");
+        console.log(presser[1]);
         $("#pierogi-presser .job-image").attr("src",presser[1]);
         $("#pierogi-presser .job-title").text(presser[2]);
         $("#pierogi-presser .hidden-job").hide();
@@ -162,6 +220,8 @@ $("#boiler-cost").text(numberWithCommas(calc_cost(get_value_from_object(player_a
 $("#dough-level").text(get_value_from_object(player_arr,"dough_level"));
 $("#presser-level").text(get_value_from_object(player_arr,"presser_level"));
 $("#boiler-level").text(get_value_from_object(player_arr,"boiler_level"));
+
+job_animations(0,0);
 
 setInterval(function(){
     
